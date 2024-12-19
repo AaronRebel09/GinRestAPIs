@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -26,6 +27,22 @@ func getAlbums(c *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/albums", getAlbums)
+
+	router.GET("/files", my_file)
+
+	//router.GET("/counter_incr", Increment)
+
+	//my_counter := new(Counter)
+
+	//fmt.Println(my_counter.GetCount())
+	//for i := 1; i <= 10; i++ {
+	//	my_counter.Increment()
+	//	}
+
+	//	fmt.Println(my_counter.GetCount())
+		
+	// myCounter.count -= 6 // Defeats the encapsulation of Counter    fmt.Println(myCounter.GetCount())”
+
 
 	router.Run("localhost:8080")
 }
